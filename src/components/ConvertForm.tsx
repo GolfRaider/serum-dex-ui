@@ -347,7 +347,7 @@ function ConvertFormSubmit({
     [market?.address.toBase58(), size],
   );
 
-  const canConvert = market && size && size > 0;
+  const canConvert = market && size; //1 if market and size variables are not zero, 0 if market, size or both are zero. Was (market && size && size > 0)
   const balance = balances.find(
     (coinBalance) => coinBalance.coin === fromToken,
   );
